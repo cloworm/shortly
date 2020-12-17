@@ -1,6 +1,8 @@
-import "tailwindcss/tailwind.css"
+import { ReactElement } from 'react'
+import type { AppProps } from 'next/app'
+import 'tailwindcss/tailwind.css'
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps): ReactElement {
   return <Component {...pageProps} />
 }
 
