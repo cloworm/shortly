@@ -5,9 +5,12 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
-      sans: ['Popins', 'sans-serif']
+      sans: ['Poppins', 'sans-serif']
     },
     extend: {
+      backgroundImage: {
+        hero: 'url(\'/images/illustration-working.svg\')'
+      },
       colors: {
         theme_cyan: 'hsl(180, 66%, 49%)',
         theme_darkViolet: 'hsl(257, 27%, 26%)',
@@ -15,7 +18,13 @@ module.exports = {
         theme_gray: 'hsl(0, 0%, 75%)',
         theme_grayishViolet: 'hsl(257, 7%, 63%)',
         theme_veryDarkBlue: 'hsl(255, 11%, 22%)',
-        theme_veryDarkViolet: 'hsl(260, 8%, 14%)'
+        theme_veryDarkViolet: 'hsl(260, 8%, 14%)',
+      },
+      lineHeight: {
+        '15': '4.5rem',
+      },
+      zIndex: {
+        '-1': '-1'
       }
     },
   },
