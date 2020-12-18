@@ -1,0 +1,25 @@
+import { ReactElement } from 'react'
+
+import Button from './Button'
+import { Size } from '../types/size.type'
+
+const Navbar = (): ReactElement => {
+  return (
+    <div className="flex items-center px-24">
+      <a href="#" className="font-bold text-3xl text-theme_darkViolet">Shortly</a>
+
+      <div className="pl-11">
+        <a href="#" className="text-sm pr-6 font-bold text-theme_grayishViolet" id="feat">Features</a>
+        <a href="#" className="text-sm pr-6 font-bold text-theme_grayishViolet" id="pricing">Pricing</a>
+        <a href="#" className="text-sm pr-6 font-bold text-theme_grayishViolet" id="resources">Resources</a>
+      </div>
+
+      <div className="flex-end ml-auto">
+        <a href="#" className="text-sm pr-8 font-bold text-theme_grayishViolet" id="login">Login</a>
+        <Button label="Sign Up" size={Size.SMALL} rounded />
+      </div>
+    </div>
+  )
+}
+
+export default Navbar
