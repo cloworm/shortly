@@ -9,7 +9,12 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        hero: 'url(\'/images/illustration-working.svg\')'
+        boost: 'url(\'/images/bg-boost-desktop.svg\')',
+        boost_mobile: 'url(\'/images/bg-boost-mobile.svg\')',
+        half: 'linear-gradient(0deg, rgb(237, 238, 245) 50%, #fff 50%)',
+        hero: 'url(\'/images/illustration-working.svg\')',
+        shorten: 'url(\'/images/bg-shorten-desktop.svg\')',
+        shorten_mobile: 'url(\'/images/bg-shorten-mobile.svg\')',
       },
       colors: {
         theme_cyan: 'hsl(180, 66%, 49%)',
@@ -19,9 +24,10 @@ module.exports = {
         theme_grayishViolet: 'hsl(257, 7%, 63%)',
         theme_veryDarkBlue: 'hsl(255, 11%, 22%)',
         theme_veryDarkViolet: 'hsl(260, 8%, 14%)',
+        theme_lightGray: 'rgb(237, 238, 245)'
       },
       lineHeight: {
-        '15': '4.5rem',
+        '17': '5.5rem'
       },
       zIndex: {
         '-1': '-1'

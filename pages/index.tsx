@@ -3,6 +3,8 @@ import { ReactElement } from 'react'
 
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
+import Shortener from '../components/Shortener'
+import Features from '../components/Features'
 
 export default function Home(): ReactElement {
   return (
@@ -14,10 +16,11 @@ export default function Home(): ReactElement {
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet" />
       </Head>
 
-
-      <main className="px-24 py-8">
+      <main className="py-8 overflow-x-hidden">
         <Navbar />
         <Hero />
+        <Shortener />
+        <Features />
       </main>
 
       <footer>
