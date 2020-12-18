@@ -17,6 +17,7 @@ module.exports = {
         hero: 'url(\'/images/illustration-working.svg\')',
         shorten: 'url(\'/images/bg-shorten-desktop.svg\')',
         shorten_mobile: 'url(\'/images/bg-shorten-mobile.svg\')',
+        stripe: 'linear-gradient(0deg, transparent 49%, hsl(180, 66%, 49%) 49%, hsl(180, 66%, 49%) 51%, transparent 51%)'
       },
       colors: {
         theme_cyan: 'hsl(180, 66%, 49%)',
