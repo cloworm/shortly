@@ -1,5 +1,7 @@
 /* eslint-env node */
 // eslint-disable-next-line @typescript-eslint/no-var-requires
+const plugin = require('tailwindcss/plugin')
+
 module.exports = {
   purge: ['./components/**/*.{js,ts,jsx,tsx}', './pages/**/*.{js,ts,jsx,tsx}'],
   darkMode: false, // or 'media' or 'class'
@@ -37,5 +39,13 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    plugin(({ addUtilities }) => {
+      addUtilities({
+        '.bg-boost': {
+          background: 'url(\'/images/bg-boost-desktop.svg\') hsl(257, 27%, 26%)'
+        }
+      })
+    })
+  ],
 }

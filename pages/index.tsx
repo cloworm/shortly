@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
 import Shortener from '../components/Shortener'
 import Features from '../components/Features'
+import Boost from '../components/Boost'
 
 export default function Home(): ReactElement {
   return (
@@ -21,6 +22,7 @@ export default function Home(): ReactElement {
         <Hero />
         <Shortener />
         <Features />
+        <Boost />
       </main>
 
       <footer>
