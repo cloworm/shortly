@@ -18,10 +18,10 @@ const Hero = (): ReactElement => {
           <Button label="Get Started" size={Size.MEDIUM} rounded></Button>
         </div>
       </div>
-      <div className="h-80 lg:h-auto flex-1 relative order-first lg:order-last">
+      <div className="h-80 lg:h-auto flex-1 relative order-first lg:order-last text-align:center">
         <img
           src="/images/illustration-working.svg"
-          className="lg:absolute lg:-right-52 lg:bottom-0  max-w-none w-auto lg:max-w-full h-full lg:h-auto"
+          className="lg:absolute lg:-right-52 lg:bottom-0  max-w-none w-auto lg:max-w-full h-full lg:h-auto inline-block"
         />
       </div>
     </div>
