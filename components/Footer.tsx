@@ -2,15 +2,15 @@ import { ReactElement } from 'react'
 
 const Footer = (): ReactElement => {
   return (
-    <footer className="bg-theme_veryDarkViolet flex px-24 py-10 justify-between">
+    <footer className="bg-theme_veryDarkViolet flex px-24 py-10 flex-col lg:flex-row lg:justify-between">
       <div>
-        <p className="text-white text-3xl font-bold">
+        <p className="text-white text-3xl text-center lg:text-left font-bold">
           Shortly
         </p>
       </div>
-      <div className="flex space-x-16">
+      <div className="flex flex-col text-center lg:text-left lg:flex-row lg:space-x-16 pb-10 lg:pb-0">
         <div>
-          <p className="text-white font-bold pb-4">
+          <p className="text-white font-bold pt-10 lg:pt-0 pb-6 lg:pb-4">
             Features
           </p>
           <ul className="text-theme_grayishViolet">
@@ -20,7 +20,7 @@ const Footer = (): ReactElement => {
           </ul>
         </div>
         <div>
-          <p className="text-white font-bold pb-4">
+          <p className="text-white font-bold pt-10 lg:pt-0 pb-6 lg:pb-4">
             Resources
           </p>
           <ul className="text-theme_grayishViolet">
@@ -30,7 +30,7 @@ const Footer = (): ReactElement => {
           </ul>
         </div>
         <div>
-          <p className="text-white font-bold pb-4">
+          <p className="text-white font-bold pt-10 lg:pt-0 pb-6 lg:pb-4">
             Company
           </p>
           <ul className="text-theme_grayishViolet">
@@ -41,7 +41,7 @@ const Footer = (): ReactElement => {
           </ul>
         </div>
       </div>
-      <div className="flex space-x-5">
+      <div className="flex justify-center space-x-5">
         <a href="#">
           <img src="/images/icon-facebook.svg" />
         </a>

@@ -18,7 +18,7 @@ export default function Home(): ReactElement {
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet" />
       </Head>
 
-      <main className="pt-8 overflow-x-hidden">
+      <main className="pt-4 lg:pt-8 overflow-x-hidden">
         <Navbar />
         <Hero />
         <Shortener />

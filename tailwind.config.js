@@ -11,13 +11,16 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        boost: 'url(\'/images/bg-boost-desktop.svg\')',
-        boost_mobile: 'url(\'/images/bg-boost-mobile.svg\')',
         half: 'linear-gradient(0deg, rgb(237, 238, 245) 50%, #fff 50%)',
         hero: 'url(\'/images/illustration-working.svg\')',
         shorten: 'url(\'/images/bg-shorten-desktop.svg\')',
         shorten_mobile: 'url(\'/images/bg-shorten-mobile.svg\')',
-        stripe: 'linear-gradient(0deg, transparent 49%, hsl(180, 66%, 49%) 49%, hsl(180, 66%, 49%) 51%, transparent 51%)'
+        'stripe-h': 'linear-gradient(0deg, transparent 49%, hsl(180, 66%, 49%) 49%, hsl(180, 66%, 49%) 51%, transparent 51%)',
+        'stripe-v': 'linear-gradient(90deg, transparent 49%, hsl(180, 66%, 49%) 49%, hsl(180, 66%, 49%) 51%, transparent 51%)',
+      },
+      backgroundSize: {
+        '100-100': '100% 100%',
+        '105-100': '105% 100%',
       },
       colors: {
         theme_cyan: 'hsl(180, 66%, 49%)',
@@ -29,8 +32,17 @@ module.exports = {
         theme_veryDarkViolet: 'hsl(260, 8%, 14%)',
         theme_lightGray: 'rgb(237, 238, 245)'
       },
+      height: {
+        '36px': '36px'
+      },
+      inset: {
+        '31': '7.75rem'
+      },
       lineHeight: {
         '17': '5.5rem'
+      },
+      width: {
+        '36px': '36px'
       },
       zIndex: {
         '-1': '-1'
@@ -45,8 +57,11 @@ module.exports = {
       addUtilities({
         '.bg-boost': {
           background: 'url(\'/images/bg-boost-desktop.svg\') hsl(257, 27%, 26%)'
+        },
+        '.bg-boost_mobile': {
+          background: 'url(\'/images/bg-boost-mobile.svg\') hsl(257, 27%, 26%)'
         }
-      })
+      }, ['responsive'])
     })
   ],
 }
