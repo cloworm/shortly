@@ -5,8 +5,8 @@ import { Size } from '../types/size.type'
 
 const Boost = (): ReactElement => {
   return (
-    <div className="bg-boost py-12 text-center">
-      <p className="text-white font-bold text-3xl text-center pb-6">
+    <div className="bg-boost_mobile lg:bg-boost bg-100-100 lg:bg-auto py-20 lg:py-10 text-center">
+      <p className="text-white font-bold text-2xl lg:text-3xl text-center pb-6">
         Boost your links today
       </p>
 

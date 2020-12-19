@@ -10,7 +10,7 @@ const Footer = (): ReactElement => {
       </div>
       <div className="flex flex-col text-center lg:text-left lg:flex-row lg:space-x-16 pb-10 lg:pb-0">
         <div>
-          <p className="text-white font-bold pt-10 pb-6 lg:pb-4">
+          <p className="text-white font-bold pt-10 lg:pt-0 pb-6 lg:pb-4">
             Features
           </p>
           <ul className="text-theme_grayishViolet">
@@ -20,7 +20,7 @@ const Footer = (): ReactElement => {
           </ul>
         </div>
         <div>
-          <p className="text-white font-bold pt-10 pb-6 lg:pb-4">
+          <p className="text-white font-bold pt-10 lg:pt-0 pb-6 lg:pb-4">
             Resources
           </p>
           <ul className="text-theme_grayishViolet">
@@ -30,7 +30,7 @@ const Footer = (): ReactElement => {
           </ul>
         </div>
         <div>
-          <p className="text-white font-bold pt-10 pb-6 lg:pb-4">
+          <p className="text-white font-bold pt-10 lg:pt-0 pb-6 lg:pb-4">
             Company
           </p>
           <ul className="text-theme_grayishViolet">
