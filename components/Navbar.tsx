@@ -40,8 +40,9 @@ const Navbar = (): ReactElement => {
           py-6
           px-6
           transition-all
+          duration-75
           ease-linear
-          ${isOpen ? 'visible' : 'invisible'}
+          ${isOpen ? 'visible opacity-100' : 'invisible opacity-0'}
         `}
       >
         <ul className="text-white text-center font-bold border-b border-theme_grayishViolet pb-3">
