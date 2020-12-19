@@ -1,7 +1,6 @@
 import { ReactElement } from 'react'
 
-import Button from './Button'
-import { Size } from '../types/size.type'
+import Button, { Size } from './Button'
 
 const Boost = (): ReactElement => {
   return (
@@ -10,7 +9,7 @@ const Boost = (): ReactElement => {
         Boost your links today
       </p>
 
-      <Button label="Get Started" size={Size.MEDIUM} rounded />
+      <Button size={Size.MEDIUM} rounded>Get Started</Button>
     </div>
   )
 }

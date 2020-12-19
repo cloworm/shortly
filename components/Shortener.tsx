@@ -1,7 +1,6 @@
 import { ReactElement } from 'react'
 
-import Button from './Button'
-import { Size } from '../types/size.type'
+import Button, { Size, Width } from './Button'
 
 const Shortener = (): ReactElement => {
   return (
@@ -14,7 +13,7 @@ const Shortener = (): ReactElement => {
           />
         </div>
         <div>
-          <Button label="Shorten it!" size={Size.MEDIUM} />
+          <Button size={Size.MEDIUM} width={Width.FULL}>Shorten it!</Button>
         </div>
       </div>
     </div>
