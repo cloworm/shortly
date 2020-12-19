@@ -29,8 +29,14 @@ module.exports = {
         theme_veryDarkViolet: 'hsl(260, 8%, 14%)',
         theme_lightGray: 'rgb(237, 238, 245)'
       },
+      height: {
+        '36px': '36px'
+      },
       lineHeight: {
         '17': '5.5rem'
+      },
+      width: {
+        '36px': '36px'
       },
       zIndex: {
         '-1': '-1'
