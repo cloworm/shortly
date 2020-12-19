@@ -20,7 +20,7 @@ const Button = ({
   }
 
   return (
-    <button className={`tracking-wide bg-theme_cyan ${rounded ? 'rounded-full py-2.5' : 'rounded py-3'} font-bold text-white px-6`} id="signup">
+    <button className={`tracking-wide bg-theme_cyan ${rounded ? 'rounded-full py-2.5' : 'rounded py-3 w-full'} font-bold text-white px-6`} id="signup">
       { label }
     </button>
   )

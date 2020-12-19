@@ -14,7 +14,7 @@ const Hero = (): ReactElement => {
         <p className="text-base lg:text-xl text-theme_grayishViolet text-center lg:text-left px-6 lg:px-0 lg:pr-24 pb-8">
           Build your brand&apos;s recognition and get detailed insights on how your links are performing.
         </p>
-        <div className="text-center">
+        <div className="text-center lg:text-left">
           <Button label="Get Started" size={Size.MEDIUM} rounded></Button>
         </div>
       </div>
