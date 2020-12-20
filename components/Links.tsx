@@ -8,7 +8,7 @@ const Links = (): ReactElement => {
   const [links] = useRecoilState(linksState)
 
   return (
-    <div className="bg-theme_lightGray pt-2 px-28">
+    <div className="bg-theme_lightGray pt-2 px-6 lg:px-28">
       {
         links.map((link, idx) => {
           return <Link key={idx} link={link} />
