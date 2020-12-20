@@ -8,8 +8,11 @@ import Features from '../components/Features'
 import Boost from '../components/Boost'
 import Footer from '../components/Footer'
 import Links from '../components/Links'
+import useSetLocalLinks from '../components/hooks/useSetLocalLinks'
 
 export default function Home(): ReactElement {
+  useSetLocalLinks()
+
   return (
     <div>
       <Head>
