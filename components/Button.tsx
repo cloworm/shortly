@@ -38,7 +38,9 @@ const Button = ({
         active:outline-none
         transition-all
         ease-in-out
-        ${backgroundColor ? 'bg-' + backgroundColor : 'bg-theme_cyan hover:bg-theme_lightCyan'}
+        disabled:opacity-50
+        ${backgroundColor ? 'bg-' + backgroundColor : 'bg-theme_cyan'}
+        ${!backgroundColor && !disabled ? 'hover:bg-theme_lightCyan' : ''}
         ${rounded ? 'rounded-full py-2.5' : 'rounded py-3'}
         ${size === Size.SMALL ? 'text-sm py-2.5' : ''}
         ${width === Width.FULL ? 'w-full' : (width === Width.FIXED ? 'w-32' : '' )}

@@ -1,9 +1,9 @@
 import { atom } from 'recoil'
 
 export interface LinkType {
-  original: string
-  shortened: string
-  copied: boolean
+  original?: string
+  shortened?: string
+  copied?: boolean
 }
 
 const linksState = atom<LinkType[]>({

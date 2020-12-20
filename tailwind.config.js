@@ -51,7 +51,9 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      opacity: ['disabled']
+    },
   },
   plugins: [
     plugin(({ addUtilities }) => {
@@ -61,6 +63,12 @@ module.exports = {
         },
         '.bg-boost_mobile': {
           background: 'url(\'/images/bg-boost-mobile.svg\') hsl(257, 27%, 26%)'
+        },
+        '.animation-delay-500': {
+          'animation-delay': '500ms'
+        },
+        '.animation-delay-1000': {
+          'animation-delay': '1000ms'
         }
       }, ['responsive'])
     })

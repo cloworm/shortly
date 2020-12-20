@@ -2,7 +2,8 @@ import { ReactElement, useCallback, useState } from 'react'
 
 import Button, { Size, Width } from './Button'
 import linksState from '../recoil/atoms/links'
-import { useSetRecoilState } from 'recoil'
+import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil'
+import { replaceItemAtIndex } from './utils/array'
 
 interface ShrtcodeResult {
   code: string
@@ -18,27 +19,35 @@ interface ShrtcodeResponse {
 const Shortener = (): ReactElement => {
   const [inputValue, setInputValue] = useState('')
   const [loading, setLoading] = useState(false)
-  const setLinks = useSetRecoilState(linksState)
+  const [links, setLinks] = useRecoilState(linksState)
 
   const addLink = useCallback(async () => {
-    console.log('value', inputValue)
     if (!inputValue || inputValue.trim()?.length === 0) return
-    setLoading(true)
 
-    createShortenedLink(inputValue).then((response) => {
-      console.log('response', response)
-      setLinks((oldLinks) => [
-        {
-          original: inputValue,
-          shortened: response.result.full_short_link,
-          copied: false,
-        },
-        ...oldLinks,
-      ])
-      setInputValue('')
-      setLoading(false)
+    const value = inputValue
+
+    setLoading(true)
+    setInputValue('')
+    let newLinks = [
+      {
+        original: value,
+        shortened: null,
+        copied: false
+      },
+      ...links
+    ]
+    setLinks(newLinks)
+
+    const response = await createShortenedLink(value)
+    newLinks = replaceItemAtIndex(newLinks, 0, {
+      original: value,
+      shortened: response.result.full_short_link,
+      copied: false
     })
-  }, [inputValue, setLinks])
+
+    setLinks(newLinks)
+    setLoading(false)
+  }, [inputValue, links, setLinks])
 
   const createShortenedLink = async (value: string): Promise<ShrtcodeResponse> => {
     const response = await fetch(`https://api.shrtco.de/v2/shorten?url=${value}`)
@@ -70,7 +79,14 @@ const Shortener = (): ReactElement => {
             />
           </div>
           <div>
-            <Button size={Size.MEDIUM} width={Width.FULL} onClick={addLink} disabled={loading}>Shorten it!</Button>
+            <Button
+              size={Size.MEDIUM}
+              width={Width.FULL}
+              onClick={addLink}
+              disabled={loading}
+            >
+              Shorten it!
+            </Button>
           </div>
         </div>
       </form>
