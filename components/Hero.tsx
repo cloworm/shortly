@@ -23,6 +23,7 @@ const Hero = (): ReactElement => {
         <img
           src="/images/illustration-working.svg"
           className="lg:absolute lg:-right-52 lg:bottom-0  max-w-none w-auto lg:max-w-full h-full lg:h-auto inline-block"
+          alt="Illustration of a person working at a desk"
         />
       </div>
     </div>
