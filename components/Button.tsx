@@ -27,6 +27,10 @@ const Button = ({
       font-bold
       text-white
       px-6
+      hover:bg-theme_lightCyan
+      focus:outline-none
+      transition-all
+      ease-in-out
       ${rounded ? 'rounded-full py-2.5' : 'rounded py-3'}
       ${size === Size.SMALL ? 'text-sm py-2.5' : ''}
       ${width === Width.FULL ? 'w-full' : ''}

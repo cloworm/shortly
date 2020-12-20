@@ -11,13 +11,13 @@ const Navbar = (): ReactElement => {
       <a href="#" className="font-bold  text-4xl lg:text-3xl text-theme_darkViolet">Shortly</a>
 
       <div className="pl-11 invisible lg:visible">
-        <a href="#" className="text-sm pr-6 font-bold text-theme_grayishViolet" id="feat">Features</a>
-        <a href="#" className="text-sm pr-6 font-bold text-theme_grayishViolet" id="pricing">Pricing</a>
-        <a href="#" className="text-sm pr-6 font-bold text-theme_grayishViolet" id="resources">Resources</a>
+        <a href="#" className="text-sm pr-6 font-bold text-theme_grayishViolet hover:text-theme_veryDarkViolet transition-all ease-in-out" id="feat">Features</a>
+        <a href="#" className="text-sm pr-6 font-bold text-theme_grayishViolet hover:text-theme_veryDarkViolet transition-all ease-in-out" id="pricing">Pricing</a>
+        <a href="#" className="text-sm pr-6 font-bold text-theme_grayishViolet hover:text-theme_veryDarkViolet transition-all ease-in-out" id="resources">Resources</a>
       </div>
 
       <div className="flex-end ml-auto invisible lg:visible">
-        <a href="#" className="text-sm pr-8 font-bold text-theme_grayishViolet" id="login">Login</a>
+        <a href="#" className="text-sm pr-8 font-bold text-theme_grayishViolet hover:text-theme_veryDarkViolet transition-all ease-in-out" id="login">Login</a>
         <Button size={Size.SMALL} rounded>Sign Up</Button>
       </div>
 

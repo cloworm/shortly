@@ -24,6 +24,7 @@ module.exports = {
       },
       colors: {
         theme_cyan: 'hsl(180, 66%, 49%)',
+        theme_lightCyan: 'rgb(153, 225, 226)',
         theme_darkViolet: 'hsl(257, 27%, 26%)',
         theme_red: 'hsl(0, 87%, 67%)',
         theme_gray: 'hsl(0, 0%, 75%)',
