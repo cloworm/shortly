@@ -1,7 +1,8 @@
 import { useEffect, useCallback } from 'react'
 import { useSetRecoilState } from 'recoil'
-import linksState from '../../recoil/atoms/links'
+import { nanoid } from 'nanoid'
 
+import linksState from '../../recoil/atoms/links'
 import localStorage from './useLocalStorage'
 
 const useSetLocalLinks = () => {
@@ -11,16 +12,19 @@ const useSetLocalLinks = () => {
   const setDefault = useCallback(() => {
     setLocalStorage('links', JSON.stringify([
       {
+        id: nanoid(),
         original: 'https://www.frontendmentor.io',
         shortened: 'https://rel.ink/k4Kyk',
         copied: false,
       },
       {
+        id: nanoid(),
         original: 'https://twitter.com/frontendmentor',
         shortened: 'https://rel.ink/gxOXp9',
         copied: false,
       },
       {
+        id: nanoid(),
         original: 'https://www.linkedin.com/company/frontend-mentor',
         shortened: 'https://rel.ink/gob3X9',
         copied: false,
@@ -35,7 +39,6 @@ const useSetLocalLinks = () => {
       try {
         setLinks(JSON.parse(value))
       } catch (e) {
-        console.log('e', e)
         setDefault()
       }
     } else {
