@@ -1,7 +1,7 @@
 import { ReactElement, useCallback, useState } from 'react'
 import { useClipboard } from 'use-clipboard-copy'
 
-import Button, { Size } from './Button'
+import Button, { Size, Width } from './Button'
 import { LinkType } from '../recoil/atoms/links'
 
 const Link = ({ link }: { link: LinkType }): ReactElement => {
@@ -30,7 +30,9 @@ const Link = ({ link }: { link: LinkType }): ReactElement => {
           <Button
             size={Size.MEDIUM}
             onClick={handleClick}
-            backgroundColor={ copied ? 'theme_darkViolet' : ''}>
+            backgroundColor={ copied ? 'theme_darkViolet' : ''}
+            width={Width.FIXED}
+          >
             { copied ? 'Copied!' : 'Copy' }
           </Button>
         </div>
