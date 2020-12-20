@@ -7,7 +7,7 @@ const Navbar = (): ReactElement => {
   const { isOpen, toggleMenu, wrapperRef } = useMenu()
 
   return (
-    <div className="relative flex items-center px-8 lg:px-24">
+    <div className="relative flex items-center px-8 lg:px-28">
       <a href="#" className="font-bold  text-4xl lg:text-3xl text-theme_darkViolet">Shortly</a>
 
       <div className="pl-11 invisible lg:visible">
