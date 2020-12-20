@@ -10,6 +10,7 @@ export enum Width {
 }
 
 const Button = ({
+  backgroundColor,
   children,
   disabled,
   onClick,
@@ -17,6 +18,7 @@ const Button = ({
   size,
   width,
 }: {
+  backgroundColor?: string,
   children: ReactNode,
   disabled?: boolean,
   onClick?: () => void,
@@ -28,15 +30,16 @@ const Button = ({
     <button
       className={`
         tracking-wide
-        bg-theme_cyan
+
         font-bold
         text-white
         px-6
-        hover:bg-theme_lightCyan
+
         focus:outline-none
         active:outline-none
         transition-all
         ease-in-out
+        ${backgroundColor ? 'bg-' + backgroundColor : 'bg-theme_cyan hover:bg-theme_lightCyan'}
         ${rounded ? 'rounded-full py-2.5' : 'rounded py-3'}
         ${size === Size.SMALL ? 'text-sm py-2.5' : ''}
         ${width === Width.FULL ? 'w-full' : ''}

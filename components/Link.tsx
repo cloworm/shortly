@@ -1,9 +1,18 @@
-import { ReactElement } from 'react'
+import { ReactElement, useCallback, useState } from 'react'
+import { useClipboard } from 'use-clipboard-copy'
 
 import Button, { Size } from './Button'
 import { LinkType } from '../recoil/atoms/links'
 
 const Link = ({ link }: { link: LinkType }): ReactElement => {
+  const [copied, setCopied] = useState(false)
+  const clipboard = useClipboard()
+
+  const handleClick = useCallback(() => {
+    clipboard.copy(link.shortened)
+    setCopied(true)
+  }, [clipboard, link])
+
   return (
     <div className="pt-4">
       <div className="bg-white flex items-center rounded px-8 py-3">
@@ -18,7 +27,12 @@ const Link = ({ link }: { link: LinkType }): ReactElement => {
           </a>
         </div>
         <div>
-          <Button size={Size.MEDIUM}>Copy</Button>
+          <Button
+            size={Size.MEDIUM}
+            onClick={handleClick}
+            backgroundColor={ copied ? 'theme_darkViolet' : ''}>
+            { copied ? 'Copied!' : 'Copy' }
+          </Button>
         </div>
       </div>
     </div>

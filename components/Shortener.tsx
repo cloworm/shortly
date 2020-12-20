@@ -38,7 +38,7 @@ const Shortener = (): ReactElement => {
       setInputValue('')
       setLoading(false)
     })
-  }, [])
+  }, [inputValue, setLinks])
 
   const createShortenedLink = async (value: string): Promise<ShrtcodeResponse> => {
     const response = await fetch(`https://api.shrtco.de/v2/shorten?url=${value}`)
