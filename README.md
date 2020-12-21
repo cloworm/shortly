@@ -6,12 +6,6 @@ Link Shortener frontend challenge from [Frontend Mentor](https://www.frontendmen
 
 ## [Demo](https://shortly.cloworm.vercel.app/)
 
-### Desktop
-<img src="https://user-images.githubusercontent.com/5566310/102733370-25a1e400-430b-11eb-9bb4-852053c4fb4c.png" width="500" alt="Desktop">
-
-### Mobile
-<img src="https://user-images.githubusercontent.com/5566310/102733373-26d31100-430b-11eb-990e-c4ec93260168.png" width="300" alt="Mobile">
-
 ## Features
 * View the optimal layout for the site depending on their device's screen size
 * Shorten any valid URL
@@ -30,7 +24,7 @@ Link Shortener frontend challenge from [Frontend Mentor](https://www.frontendmen
 
 ## Development
 
-  1. Clone repo
+1. Clone repo
 
       ```
       git clone https://github.com/cloworm/shortly
@@ -47,3 +41,11 @@ Link Shortener frontend challenge from [Frontend Mentor](https://www.frontendmen
       ```
       npm run dev
       ```
+
+## Screenshots
+
+### Desktop
+<img src="https://user-images.githubusercontent.com/5566310/102733370-25a1e400-430b-11eb-9bb4-852053c4fb4c.png" width="500" alt="Desktop">
+
+### Mobile
+<img src="https://user-images.githubusercontent.com/5566310/102733373-26d31100-430b-11eb-990e-c4ec93260168.png" width="300" alt="Mobile">
