@@ -13,6 +13,11 @@ const useLinks = (): [LinkType[], (value: LinkType[]) => void] => {
         original: 'https://github.com/cloworm',
         shortened: 'https://shrtco.de/v9IcWA',
         copied: false,
+      }, {
+        id: nanoid(),
+        original: 'https://cloworm.github.io/',
+        shortened: 'https://shrtco.de/sKpucB',
+        copied: false,
       }
     ],
   )
