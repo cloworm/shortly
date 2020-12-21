@@ -10,12 +10,12 @@ const FeatureCard = ({
   content: string
 }): ReactElement => {
   return (
-    <div className="bg-white rounded relative pt-20 px-7 pb-8">
+    <div className="bg-white rounded relative pt-20 px-10 lg:px-9 pb-8">
       <div className="bg-theme_darkViolet inline-block rounded-full p-6 w-20 h-20 absolute -top-7 left-31 lg:left-6">
-        <img src={icon} />
+        <img src={icon} alt={`${title} icon`} />
       </div>
       <h3 className="text-xl text-center lg:text-left text-theme_darkViolet font-bold">{title}</h3>
-      <p className="text-center lg:text-left text-theme_grayishViolet pt-4">
+      <p className="text-center text-sm lg:text-base lg:text-left text-theme_grayishViolet pt-4">
         {content}
       </p>
     </div>

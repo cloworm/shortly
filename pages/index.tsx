@@ -7,6 +7,7 @@ import Shortener from '../components/Shortener'
 import Features from '../components/Features'
 import Boost from '../components/Boost'
 import Footer from '../components/Footer'
+import Links from '../components/Links'
 
 export default function Home(): ReactElement {
   return (
@@ -22,6 +23,7 @@ export default function Home(): ReactElement {
         <Navbar />
         <Hero />
         <Shortener />
+        <Links />
         <Features />
         <Boost />
       </main>

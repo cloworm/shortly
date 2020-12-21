@@ -2,7 +2,7 @@ import { ReactElement } from 'react'
 
 const Footer = (): ReactElement => {
   return (
-    <footer className="bg-theme_veryDarkViolet flex px-24 py-10 flex-col lg:flex-row lg:justify-between">
+    <footer className="bg-theme_veryDarkViolet flex px-32 py-10 lg:py-16 flex-col lg:flex-row lg:justify-between">
       <div>
         <p className="text-white text-3xl text-center lg:text-left font-bold">
           Shortly

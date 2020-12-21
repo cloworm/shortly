@@ -34,13 +34,18 @@ module.exports = {
         theme_lightGray: 'rgb(237, 238, 245)'
       },
       height: {
-        '36px': '36px'
+        '36px': '36px',
+        '74': '18.5rem'
       },
       inset: {
+        '23': '5.75rem',
         '31': '7.75rem'
       },
       lineHeight: {
         '17': '5.5rem'
+      },
+      padding: {
+        '112': '28rem'
       },
       width: {
         '36px': '36px'
@@ -51,7 +56,9 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      opacity: ['disabled']
+    },
   },
   plugins: [
     plugin(({ addUtilities }) => {
@@ -61,6 +68,12 @@ module.exports = {
         },
         '.bg-boost_mobile': {
           background: 'url(\'/images/bg-boost-mobile.svg\') hsl(257, 27%, 26%)'
+        },
+        '.animation-delay-500': {
+          'animation-delay': '500ms'
+        },
+        '.animation-delay-1000': {
+          'animation-delay': '1000ms'
         }
       }, ['responsive'])
     })
