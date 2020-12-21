@@ -12,7 +12,7 @@ const Links = (): ReactElement => {
     <div className="bg-theme_lightGray pt-2 px-6 lg:px-28">
       <AnimatePresence initial={false}>
         {
-          links.map((link) => {
+          links?.map((link) => {
             return (
               <motion.div
                 key={link.id}

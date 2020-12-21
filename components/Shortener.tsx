@@ -7,28 +7,25 @@ import useLocalStorageLinks from './hooks/useLinks'
 
 interface ShrtcodeResult {
   code: string
-  short_link: string
   full_short_link: string
 }
 
 interface ShrtcodeResponse {
   ok: boolean
+  error?: string
   result: ShrtcodeResult
 }
 
 const Shortener = (): ReactElement => {
-  const [inputValue, setInputValue] = useState('')
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState({
-    hasError: false,
-    message: null
-  })
+  const [inputValue, setInputValue] = useState<string>('')
+  const [loading, setLoading] = useState<boolean>(false)
+  const [errorMessage, setErrorMessage] = useState<string>(null)
   const [links, setLinks] = useLocalStorageLinks()
 
   const addLink = useCallback(async () => {
     // Check that input has a value
     if (!inputValue || inputValue.trim()?.length === 0) {
-      setError({ hasError: true, message: 'Please add a link' })
+      setErrorMessage('Please add a link')
       return
     }
 
@@ -36,11 +33,11 @@ const Shortener = (): ReactElement => {
 
     // Check that input is a valid url
     if (!validURL(value)) {
-      setError({ hasError: true, message: 'Please enter a valid link' })
+      setErrorMessage('Please enter a valid link')
       return
     }
 
-    setError({ hasError: false, message: null })
+    setErrorMessage(null)
 
     setLoading(true)
     setInputValue('')
@@ -57,6 +54,14 @@ const Shortener = (): ReactElement => {
     setLinks(newLinks)
 
     const response = await createShortenedLink(value)
+
+    if (!response.ok) {
+      setLinks(links)
+      setErrorMessage(response.error)
+      setLoading(false)
+      return
+    }
+
     newLinks = replaceItemAtIndex(newLinks, 0, {
       ...newLink,
       shortened: response.result.full_short_link,
@@ -111,15 +116,15 @@ const Shortener = (): ReactElement => {
                 focus:outline-none
                 box-border
                 border-4
-                ${error.hasError ? 'border-theme_red text-theme_red placeholder-theme_red placeholder-opacity-40' : 'border-white text-theme_gray'}
+                ${errorMessage ? 'border-theme_red text-theme_red placeholder-theme_red placeholder-opacity-40' : 'border-white text-theme_gray'}
               `}
               placeholder="Shorten a link here..."
               value={inputValue}
               onChange={onChange}
             />
           </div>
-          <div className={`relative -mt-4 lg:mt-0 pt-1.5 lg:pt-0 pb-4 lg:pb-0 lg:absolute text-sm lg:text-base text-theme_red italic lg:top-23 ${error.hasError ? 'block' : 'hidden'}`}>
-            {error.message}
+          <div className={`relative -mt-4 lg:mt-0 pt-1.5 lg:pt-0 pb-4 lg:pb-0 lg:absolute text-sm lg:text-base text-theme_red italic lg:top-23 ${errorMessage ? 'block' : 'hidden'}`}>
+            {errorMessage}
           </div>
           <div>
             <Button

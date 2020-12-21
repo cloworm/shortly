@@ -12,7 +12,7 @@ function useRecoilLocalStorage<T>(key: string, recoilState: RecoilState<T>, defa
   }, [key, setState])
 
   useEffect(() => {
-    if (!state || (Array.isArray(state) && state['length'] > 0)) return
+    if (state || (Array.isArray(state) && state['length'] > 0)) return
 
     let nextValue: T
     try {

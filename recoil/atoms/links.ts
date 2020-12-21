@@ -9,7 +9,7 @@ export interface LinkType {
 
 const linksState = atom<LinkType[]>({
   key: 'linksState',
-  default: []
+  default: null
 })
 
 export default linksState
