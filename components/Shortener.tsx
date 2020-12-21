@@ -2,10 +2,8 @@ import { ReactElement, useCallback, useState } from 'react'
 import { nanoid } from 'nanoid'
 
 import Button, { Size, Width } from './Button'
-import linksState from '../recoil/atoms/links'
-import { useRecoilState } from 'recoil'
 import { replaceItemAtIndex } from './utils/array'
-import useLocalStorage from './hooks/useLocalStorage'
+import useLocalStorageLinks from './hooks/useLinks'
 
 interface ShrtcodeResult {
   code: string
@@ -25,8 +23,7 @@ const Shortener = (): ReactElement => {
     hasError: false,
     message: null
   })
-  const [links, setLinks] = useRecoilState(linksState)
-  const { setLocalStorage } = useLocalStorage()
+  const [links, setLinks] = useLocalStorageLinks()
 
   const addLink = useCallback(async () => {
     // Check that input has a value
@@ -66,9 +63,8 @@ const Shortener = (): ReactElement => {
     })
 
     setLinks(newLinks)
-    setLocalStorage('links', JSON.stringify(newLinks))
     setLoading(false)
-  }, [inputValue, links, setLinks, setLocalStorage])
+  }, [inputValue, links, setLinks])
 
   const createShortenedLink = async (value: string): Promise<ShrtcodeResponse> => {
     const response = await fetch(`https://api.shrtco.de/v2/shorten?url=${value}`)
