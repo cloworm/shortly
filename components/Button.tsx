@@ -31,7 +31,6 @@ const Button = ({
     <button
       className={`
         tracking-wide
-        font-bold
         text-white
         px-6
         focus:outline-none

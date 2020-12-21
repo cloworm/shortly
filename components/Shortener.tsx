@@ -109,20 +109,20 @@ const Shortener = (): ReactElement => {
                 lg:mb-0
                 lg:mr-6
                 rounded
-                px-6
+                px-3.5
+                lg:px-6
                 py-2
-                text-theme_gray
                 focus:outline-none
                 box-border
                 border-4
-                ${error.hasError ? 'border-theme_red' : 'border-white'}
+                ${error.hasError ? 'border-theme_red text-theme_red placeholder-theme_red placeholder-opacity-40' : 'border-white text-theme_gray'}
               `}
               placeholder="Shorten a link here..."
               value={inputValue}
               onChange={onChange}
             />
           </div>
-          <div className={`absolute text-theme_red italic top-23 ${error.hasError ? 'block' : 'hidden'}`}>
+          <div className={`relative -mt-4 lg:mt-0 pt-1.5 lg:pt-0 pb-4 lg:pb-0 lg:absolute text-sm lg:text-base text-theme_red italic lg:top-23 ${error.hasError ? 'block' : 'hidden'}`}>
             {error.message}
           </div>
           <div>
@@ -132,7 +132,7 @@ const Shortener = (): ReactElement => {
               onClick={addLink}
               disabled={loading}
             >
-              Shorten it!
+              Shorten It!
             </Button>
           </div>
         </div>

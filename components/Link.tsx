@@ -27,10 +27,10 @@ const Link = ({ link }: { link: LinkType }): ReactElement => {
   return (
     <div className="pt-4">
       <div className="bg-white flex flex-col lg:flex-row lg:items-center rounded lg:px-8 py-4 lg:py-3">
-        <div className="pb-3 lg:pb-0 px-4 lg:px-0 text-theme_veryDarkViolet hover:text-theme_cyan border-b border-theme_lightGray lg:border-none overflow-hidden overflow-ellipsis">
+        <div className="lg:pt-0.5 pb-3 lg:pb-0 px-4 lg:px-0 text-theme_veryDarkViolet hover:text-theme_cyan border-b border-theme_lightGray lg:border-none overflow-hidden overflow-ellipsis">
           <a href={link.original} target="_blank" rel="noopener noreferrer">{link.original}</a>
         </div>
-        <div className="lg:ml-auto px-4 lg:px-0 text-theme_cyan hover:text-theme_veryDarkViolet py-4 lg:py-0 lg:pr-5 overflow-hidden overflow-ellipsis">
+        <div className="lg:pt-0.5 lg:ml-auto px-4 lg:px-0 text-theme_cyan hover:text-theme_veryDarkViolet py-4 lg:py-0 lg:pr-5 overflow-hidden overflow-ellipsis">
           {
             link.shortened
               ? <a href={link.shortened} target="_blank" rel="noopener noreferrer">{link.shortened}</a>
