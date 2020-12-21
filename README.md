@@ -1,30 +1,51 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Shortly App
 
-## Getting Started
+Next.js JAMstack hosted on Vercel.
 
-First, run the development server:
+Link Shortener frontend challenge from [Frontend Mentor](https://www.frontendmentor.io/)
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## [Demo](https://shortly.cloworm.vercel.app/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
+* View the optimal layout for the site depending on their device's screen size
+* Shorten any valid URL
+* See a list of their shortened links, even after refreshing the browser
+* Copy the shortened link to their clipboard in a single click
+* Receive an error message when the `form` is submitted if:
+  * The `input` field is empty
+  * The `input` was an invalid url
+  * The url shortener API returns an error message
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Technology Used
 
-## Learn More
+* [Next.js](https://nextjs.org/)
+* [tailwindcss](tailwindcss)
+* Hosted on [Vercel](https://vercel.com/)
 
-To learn more about Next.js, take a look at the following resources:
+## Development
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clone repo
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+      ```
+      git clone https://github.com/cloworm/shortly
+      ```
 
-## Deploy on Vercel
+2. Install Dependencies
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+      ```
+      npm i
+      ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+3. Run the dev server
+
+      ```
+      npm run dev
+      ```
+
+## Screenshots
+
+### Desktop
+<img src="https://user-images.githubusercontent.com/5566310/102733370-25a1e400-430b-11eb-9bb4-852053c4fb4c.png" width="500" alt="Desktop">
+
+### Mobile
+<img src="https://user-images.githubusercontent.com/5566310/102733373-26d31100-430b-11eb-990e-c4ec93260168.png" width="300" alt="Mobile">
