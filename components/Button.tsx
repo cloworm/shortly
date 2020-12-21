@@ -6,7 +6,7 @@ export enum Size {
 }
 
 export enum Width {
-  FIXED='fixed',
+  FIXED = 'fixed',
   FULL = 'full'
 }
 
@@ -38,7 +38,7 @@ const Button = ({
         transition-all
         ease-in-out
         disabled:opacity-50
-        ${backgroundColor ? 'bg-' + backgroundColor : 'bg-theme_cyan'}
+        ${backgroundColor ? `bg-${backgroundColor}` : 'bg-theme_cyan'}
         ${!backgroundColor && !disabled ? 'hover:bg-theme_lightCyan' : ''}
         ${rounded ? 'rounded-full py-2.5' : 'rounded py-3'}
         ${size === Size.SMALL ? 'text-sm py-2.5' : ''}

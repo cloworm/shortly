@@ -11,9 +11,3 @@ export const setLocalStorage = (key: string, value: string): void => {
     window.localStorage.setItem(key, value)
   }
 }
-
-export const resetLocalStorage = (): void => {
-  if (typeof window !== 'undefined') {
-    window.localStorage.clear()
-  }
-}

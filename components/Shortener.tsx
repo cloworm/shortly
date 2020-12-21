@@ -16,11 +16,26 @@ interface ShrtcodeResponse {
   result: ShrtcodeResult
 }
 
+const validURL = (str: string): boolean => {
+  const pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
+      '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
+      '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
+      '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
+      '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
+      '(\\#[-a-z\\d_]*)?$','i') // fragment locator
+  return !!pattern.test(str)
+}
+
 const Shortener = (): ReactElement => {
   const [inputValue, setInputValue] = useState<string>('')
   const [loading, setLoading] = useState<boolean>(false)
   const [errorMessage, setErrorMessage] = useState<string>(null)
   const [links, setLinks] = useLocalStorageLinks()
+
+  const createShortenedLink = useCallback(async (value: string): Promise<ShrtcodeResponse> => {
+    const response = await fetch(`https://api.shrtco.de/v2/shorten?url=${value}`)
+    return response.json()
+  }, [])
 
   const addLink = useCallback(async () => {
     // Check that input has a value
@@ -45,7 +60,6 @@ const Shortener = (): ReactElement => {
       id: nanoid(),
       original: value,
       shortened: null,
-      copied: false
     }
     let newLinks = [
       newLink,
@@ -69,36 +83,21 @@ const Shortener = (): ReactElement => {
 
     setLinks(newLinks)
     setLoading(false)
-  }, [inputValue, links, setLinks])
+  }, [createShortenedLink, inputValue, links, setLinks])
 
-  const createShortenedLink = async (value: string): Promise<ShrtcodeResponse> => {
-    const response = await fetch(`https://api.shrtco.de/v2/shorten?url=${value}`)
-    return response.json()
-  }
-
-  const onChange = ({ target: { value }}) => {
+  const onChange = useCallback(({ target: { value }}) => {
     setInputValue(value)
-  }
+  }, [setInputValue])
 
   const handleSubmit = useCallback((e) => {
     e.preventDefault()
     addLink()
   }, [addLink])
 
-  const validURL = (str: string): boolean => {
-    const pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
-      '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
-      '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
-      '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
-      '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
-      '(\\#[-a-z\\d_]*)?$','i') // fragment locator
-    return !!pattern.test(str)
-  }
-
   return (
-    <div className="bg-half px-6 lg:px-28 w-full mt-14">
+    <div className="bg-half px-6 lg:px-32 w-full mt-14">
       <form onSubmit={handleSubmit}>
-        <div className="relative bg-theme_darkViolet bg-shorten_mobile bg-right-top lg:bg-left-top lg:bg-shorten lg:bg-105-100 py-5 px-5 lg:py-10 lg:px-14 rounded-lg flex flex-col lg:flex-row items-stretch">
+        <div className="relative bg-theme_darkViolet bg-shorten_mobile bg-right-top bg-no-repeat lg:bg-left-top lg:bg-shorten  lg:bg-105-100 py-5 px-5 lg:py-10 lg:px-14 rounded-lg flex flex-col lg:flex-row items-stretch">
           <div className="flex-1 flex items-center">
             <input
               autoComplete="off"

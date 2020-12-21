@@ -4,7 +4,6 @@ export interface LinkType {
   id: string
   original?: string
   shortened?: string
-  copied?: boolean
 }
 
 const linksState = atom<LinkType[]>({

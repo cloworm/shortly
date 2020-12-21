@@ -34,7 +34,8 @@ module.exports = {
         theme_lightGray: 'rgb(237, 238, 245)'
       },
       height: {
-        '36px': '36px'
+        '36px': '36px',
+        '74': '18.5rem'
       },
       inset: {
         '23': '5.75rem',
@@ -42,6 +43,9 @@ module.exports = {
       },
       lineHeight: {
         '17': '5.5rem'
+      },
+      padding: {
+        '112': '28rem'
       },
       width: {
         '36px': '36px'
